@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--이벤트 전파 속성 - 버블링에 대한 개념-->
+<body>
+    <!--이벤트 위임에 대한 개념을 배우기 전 코드활용-->
+    <ul id="myList">
+        <li><button>버튼1</button></li>
+        <li><button>버튼2</button></li>
+        <li><button>버튼3</button></li>
+    </ul>
+    <script>
+        // button 에 각각 이벤트 리스너를 등록하자!
+        document.getElementById("myList").addEventListener("click", function(event){
+            console.log(event.target);
+            // 해당하는 target에 textContent 가지고 오고 싶다면
+            console.log(event.target.textContent);
+
+            // 어떤 버튼이 눌러 졌는지 alert() 을 띄워 주세요.
+            alert(event.target.textContent);
+
+            // 해당하는 버튼에 컨텐츠를 영어로 수정하시오
+            //event.target.textContent = "button";
+
+            // 버튼2 라는 글자를 가진 버튼만 글자를 수정하시오
+            if(event.target.textContent == "버튼2"){
+                event.target.textContent = "button";
+            }
+        });
+    </script>
+    
+</body>
+</html>
